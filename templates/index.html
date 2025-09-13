@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trợ lý Thư viện Tiếng Việt</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="chat-header">
+        <h1>📚 Trợ lý Thư viện Tiếng Việt</h1>
+        <p>
+          Hỏi tôi bất cứ điều gì về dịch vụ thư viện, giờ hoạt động, sách và
+          nhiều hơn nữa!
+        </p>
+      </header>
+
+      <div class="chat-container">
+        <div id="chat-messages" class="chat-messages">
+          <div class="message bot-message">
+            <div class="message-content">
+              <strong>Trợ lý Thư viện:</strong> 👋 Xin chào! Tôi là Trợ lý Thư
+              viện. Tôi có thể giúp bạn thông tin về giờ mở cửa, tìm sách, đặt
+              phòng học và nhiều hơn nữa. Bạn muốn biết gì?
+            </div>
+            <div class="message-time" id="welcome-time"></div>
+          </div>
+        </div>
+
+        <div class="chat-input-container">
+          <div class="input-group">
+            <input
+              type="text"
+              id="user-input"
+              placeholder="Nhập câu hỏi của bạn ở đây..."
+              autocomplete="off"
+            />
+            <button id="send-button">Gửi</button>
+          </div>
+          <div class="quick-actions">
+            <button
+              class="quick-btn"
+              onclick="sendQuickMessage('Thư viện mở cửa lúc mấy giờ?')"
+            >
+              Giờ Mở Cửa
+            </button>
+            <button
+              class="quick-btn"
+              onclick="sendQuickMessage('Làm thế nào để tìm sách?')"
+            >
+              Tìm Sách
+            </button>
+            <button
+              class="quick-btn"
+              onclick="sendQuickMessage('Tôi có thể đặt phòng học không?')"
+            >
+              Phòng Học
+            </button>
+            <button class="quick-btn" onclick="showHelp()">Trợ Giúp</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="limitations-note">
+        <h3>🤖 Hạn chế của Chatbot</h3>
+        <p>
+          <strong
+            >Đây là chatbot dựa trên quy tắc với những hạn chế đã biết:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            <strong>Từ vựng hạn chế:</strong> Chỉ trả lời các từ khóa được định
+            nghĩa sẵn
+          </li>
+          <li>
+            <strong>Không xử lý từ đồng nghĩa:</strong> "giờ" ≠ "thời gian" nếu
+            không có quy tắc rõ ràng
+          </li>
+          <li>
+            <strong>Khả năng chịu lỗi chính tả kém:</strong> Lỗi chính tả nhỏ có
+            thể làm hỏng phản hồi
+          </li>
+          <li>
+            <strong>Không có bộ nhớ ngữ cảnh:</strong> Mỗi câu hỏi độc lập
+          </li>
+          <li>
+            <strong>Phản hồi cứng nhắc:</strong> Không thể thích ứng với tình
+            huống cụ thể
+          </li>
+          <li>
+            <strong>Không học hỏi:</strong> Không thể cải thiện từ tương tác
+          </li>
+        </ul>
+        <p>
+          <em
+            >Thử nhập câu hỏi với các từ khác nhau hoặc lỗi chính tả để thấy
+            những hạn chế này!</em
+          >
+        </p>
+      </div> -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
